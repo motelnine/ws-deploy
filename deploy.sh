@@ -16,6 +16,13 @@ then
 	sudo pacman -S firefox
 fi
 
+yn "base-devel"
+read BASEDEVEL
+if [ $BASEDEVEL == "y" ]
+then
+	sudo pacman -S base-devel
+fi
+
 yn "yay"
 read YAY
 if [ $YAY == "y" ]
