@@ -77,7 +77,7 @@ read UTILS
 if [ $UTILS == "y" ]
 then
 	sudo pacman -S htop pidgin aspell-en neofetch
-	yay -S cava agave nerd-fonts-jetbrains-mono
+	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git
 fi
 
 yn "terminals"
@@ -107,6 +107,29 @@ then
 	sudo pacman -S fish
 	mkdir -p ~/.config/fish
 	cp ~/Development/dotfiles/fish/config.fish ~/.config/fish/config.fish
+fi
+
+yn "lxdm-themes"
+read LXDM
+if [ $LXDM == "y" ]
+then
+	yay -S lxdm-themes 
+fi
+
+yn "xfce4-i3-workspaces-plugin-git"
+read SWITCHER
+if [ $SWITCHER == "y" ]
+then
+	yay -S xfce4-i3-workspaces-plugin-git
+fi
+
+yn "ckb-next"
+read CKBNEXT
+if [ $CKBNEXT == "y" ]
+then
+	yay -S ckb-next
+	sudo systemctl enable ckb-next-daemon
+	sudo systemctl start ckb-next-daemon
 fi
 
 yn "Surface addons"
