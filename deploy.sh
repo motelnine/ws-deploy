@@ -9,6 +9,14 @@ mkdir -p ~/Downloads
 echo "Creating ~/Development"
 mkdir -p ~/Development
 
+#yn "Enable multilib"
+#read MULTILIB
+#if [ $MULTILIB == "y" ]
+#then
+#	sudo echo "[multilib]" >> /etc/pacman.conf
+#	sudo echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+#fi
+
 yn "firefox"
 read FIREFOX
 if [ $FIREFOX == "y" ]
@@ -53,7 +61,7 @@ read I3GAPS
 if [ $I3GAPS == "y" ]
 then
 	sudo pacman -S dmenu lxappearance
-	yay -S i3-gaps feh compton-tryone-git arc-gtk-theme paper-icon-theme
+	yay -S i3-gaps feh compton-tryone-git arc-gtk-theme paper-icon-theme candy-icons i3lock-fancy
 	mkdir -p ~/.config/i3
 	cp ~/Development/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
@@ -137,4 +145,12 @@ read SURFACE
 if [ $SURFACE == "y" ]
 then
 	sudo pacman -S xf86-input-synaptic
+fi
+
+yn "Nvidia"
+read NVIDIA 
+if [ $NVIDIA == "y" ]
+then
+	sudo pacman -S nvidia nvidia-utils nvidia-settings
+	
 fi
