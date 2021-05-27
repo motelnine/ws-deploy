@@ -154,3 +154,15 @@ then
 	sudo pacman -S nvidia nvidia-utils nvidia-settings
 	
 fi
+
+yn "BlackArch"
+read BLACKARCH 
+if [ $BLACKARCH == "y" ]
+then
+	curl -O https://blackarch.org/strap.sh
+	chmod 755 strap.sh
+	sudo ./strap.sh
+	rm -i strap.sh
+fi
+
+
