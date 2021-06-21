@@ -155,6 +155,13 @@ then
 	
 fi
 
+yn "NetTools"
+read NETTOOLS
+if [ $NETTOOLS == "y" ]
+then
+	sudo pacman -S net-tools whois
+fi
+
 yn "BlackArch"
 read BLACKARCH 
 if [ $BLACKARCH == "y" ]
