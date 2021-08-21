@@ -144,6 +144,7 @@ yn "Surface addons"
 read SURFACE
 if [ $SURFACE == "y" ]
 then
+	sudo pacman -S iw
 	sudo pacman -S xf86-input-synaptic
 fi
 
