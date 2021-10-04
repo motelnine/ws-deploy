@@ -173,4 +173,12 @@ then
 	rm -i strap.sh
 fi
 
+yn "libva"
+read LIBVA
+if [ $LIBVA == "y" ]
+then
+	sudo pacman -S libva
+fi
+
+
 
