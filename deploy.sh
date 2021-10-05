@@ -6,8 +6,8 @@ yn () {
 echo "Creating ~/Downloads"
 mkdir -p ~/Downloads
 
-echo "Creating ~/Development"
-mkdir -p ~/Development
+echo "Creating ~/Projects"
+mkdir -p ~/Projects
 
 #yn "Enable multilib"
 #read MULTILIB
@@ -53,7 +53,7 @@ read DOTFILES
 if [ $DOTFILES == y ]
 then
 	echo "Cloning dotfiles..."
-	git clone https://github.com/motelnine/dotfiles ~/Development/dotfiles
+	git clone https://github.com/motelnine/dotfiles ~/Projects/dotfiles
 fi
 
 yn "i3-gaps"
@@ -152,8 +152,7 @@ yn "Nvidia"
 read NVIDIA 
 if [ $NVIDIA == "y" ]
 then
-	sudo pacman -S nvidia nvidia-utils nvidia-settings
-	
+	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils	
 fi
 
 yn "NetTools"
@@ -177,7 +176,7 @@ yn "libva"
 read LIBVA
 if [ $LIBVA == "y" ]
 then
-	sudo pacman -S libva
+	sudo pacman -S libva lib32-libva
 fi
 
 
