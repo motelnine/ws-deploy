@@ -155,6 +155,13 @@ then
 	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils	
 fi
 
+yn "libva"
+read LIBVA
+if [ $LIBVA == "y" ]
+then
+	sudo pacman -S libva lib32-libva
+fi
+
 yn "NetTools"
 read NETTOOLS
 if [ $NETTOOLS == "y" ]
@@ -171,13 +178,3 @@ then
 	sudo ./strap.sh
 	rm -i strap.sh
 fi
-
-yn "libva"
-read LIBVA
-if [ $LIBVA == "y" ]
-then
-	sudo pacman -S libva lib32-libva
-fi
-
-
-
