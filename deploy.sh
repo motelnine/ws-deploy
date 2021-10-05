@@ -63,10 +63,10 @@ then
 	sudo pacman -S dmenu lxappearance
 	yay -S i3-gaps feh compton-tryone-git arc-gtk-theme paper-icon-theme candy-icons i3lock-fancy
 	mkdir -p ~/.config/i3
-	cp ~/Development/dotfiles/i3/config ~/.config/i3/config
+	cp ~/Projects/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
 	mkdir -p ~/Pictures/Wallpaper
-	cp ~/Development/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
+	cp ~/Projects/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
 fi
 
 yn "vim plugins"
@@ -74,7 +74,7 @@ read VIM
 if [ $VIM == "y" ]
 then
 	sudo pacman -S wget
-	cd ~/Development/dotfiles/vim
+	cd ~/Projects/dotfiles/vim
 	cp vimrc ~/.vimrc
 	chmod 755 installplugins.sh
 	./installplugins.sh
@@ -95,7 +95,7 @@ then
 	sudo pacman -S xfce4-terminal
 	yay -S kitty
 	mkdir -p ~/.config/kitty
-	cp ~/Development/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+	cp ~/Projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 fi
 
 
@@ -105,7 +105,7 @@ if [ $XFCE4PANEL == "y" ]
 then
 	sudo pacman -S xfce4-panel xfce4-goodies
 	yay -S network-manager-applet-gtk2 xfce4-i3-workspaces-plugin-git xfce4-pulseaudio-plugin
-	sudo cp ~/Development/dotfiles/arch/icons/* /usr/share/pixmaps/
+	sudo cp ~/Projects/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
 
 yn "fish"
@@ -114,7 +114,7 @@ if [ $FISH == "y" ]
 then
 	sudo pacman -S fish
 	mkdir -p ~/.config/fish
-	cp ~/Development/dotfiles/fish/config.fish ~/.config/fish/config.fish
+	cp ~/Projects/dotfiles/fish/config.fish ~/.config/fish/config.fish
 fi
 
 yn "lxdm-themes"
