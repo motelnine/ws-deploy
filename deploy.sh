@@ -69,6 +69,13 @@ then
 	cp ~/Projects/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
 fi
 
+yn "Stacer"
+read STACER
+if [ $STACER == "y" ]
+then
+	yay -S stacer
+fi
+
 yn "vim plugins"
 read VIM
 if [ $VIM == "y" ]
