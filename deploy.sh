@@ -73,7 +73,7 @@ yn "Stacer"
 read STACER
 if [ $STACER == "y" ]
 then
-	yay -S stacer
+	yay -S stacer-bin
 fi
 
 yn "vim plugins"
