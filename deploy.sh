@@ -177,11 +177,18 @@ then
 fi
 
 yn "BlackArch"
-read BLACKARCH 
+read BLACKARCH
 if [ $BLACKARCH == "y" ]
 then
 	curl -O https://blackarch.org/strap.sh
 	chmod 755 strap.sh
 	sudo ./strap.sh
 	rm -i strap.sh
+fi
+
+yn "Bluetooth Support"
+read BLUETOOTH
+if [ $BLUETOOTH == "y" ]
+then
+	sudo pacman -S bluez bluez-utils blueman
 fi
