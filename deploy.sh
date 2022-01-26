@@ -162,11 +162,11 @@ then
 	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils	
 fi
 
-yn "libva"
+yn "Browser/Gaming Libraries"
 read LIBVA
 if [ $LIBVA == "y" ]
 then
-	sudo pacman -S libva lib32-libva
+	sudo pacman -S libva lib32-libva lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse
 fi
 
 yn "NetTools"
