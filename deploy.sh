@@ -60,13 +60,17 @@ yn "i3-gaps"
 read I3GAPS
 if [ $I3GAPS == "y" ]
 then
-	sudo pacman -S dmenu lxappearance
-	yay -S i3-gaps feh compton-tryone-git arc-gtk-theme paper-icon-theme candy-icons i3lock-fancy
+	sudo pacman -S dmenu lxappearance rofi
+	yay -S i3-gaps feh picom arc-gtk-theme paper-icon-theme candy-icons i3lock-fancy
 	mkdir -p ~/.config/i3
 	cp ~/Projects/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
 	mkdir -p ~/Pictures/Wallpaper
 	cp ~/Projects/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
+	mkdir -p ~/.config/picom
+	cp ~/Projects/dotfiles/picom/picom.conf ~/.config/picom/
+	mkdir -p ~/.config/rofi
+	cp ~/Projects/dotfiles/rofi/config.rasi ~/.config/rofi/
 fi
 
 yn "Stacer"
