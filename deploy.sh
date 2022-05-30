@@ -53,7 +53,8 @@ read DOTFILES
 if [ $DOTFILES == y ]
 then
 	echo "Cloning dotfiles..."
-	git clone https://github.com/motelnine/dotfiles ~/Projects/dotfiles
+	mkdir ~/Projects/motelnine
+	git clone https://github.com/motelnine/dotfiles ~/Projects/motelnine/dotfiles
 fi
 
 yn "i3-gaps"
@@ -61,16 +62,16 @@ read I3GAPS
 if [ $I3GAPS == "y" ]
 then
 	sudo pacman -S dmenu lxappearance rofi
-	yay -S i3-gaps feh picom arc-gtk-theme paper-icon-theme candy-icons i3lock-fancy
+	yay -S i3-gaps feh picom arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons i3lock-fancy
 	mkdir -p ~/.config/i3
-	cp ~/Projects/dotfiles/i3/config ~/.config/i3/config
+	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
 	mkdir -p ~/Pictures/Wallpaper
-	cp ~/Projects/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
+	cp ~/Projects/motelnine/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
 	mkdir -p ~/.config/picom
-	cp ~/Projects/dotfiles/picom/picom.conf ~/.config/picom/
+	cp ~/Projects/motelnine/dotfiles/picom/picom.conf ~/.config/picom/
 	mkdir -p ~/.config/rofi
-	cp ~/Projects/dotfiles/rofi/config.rasi ~/.config/rofi/
+	cp ~/Projects/motelnine/dotfiles/rofi/config.rasi ~/.config/rofi/
 fi
 
 yn "Stacer"
@@ -85,7 +86,7 @@ read VIM
 if [ $VIM == "y" ]
 then
 	sudo pacman -S wget
-	cd ~/Projects/dotfiles/vim
+	cd ~/Projects/motelnine/dotfiles/vim
 	cp vimrc ~/.vimrc
 	chmod 755 installplugins.sh
 	./installplugins.sh
@@ -95,9 +96,9 @@ yn "utilities and fonts"
 read UTILS
 if [ $UTILS == "y" ]
 then
-	sudo pacman -S htop pidgin aspell-en neofetch
+	sudo pacman -S htop aspell-en neofetch
 	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git
-fi
+fi	
 
 yn "terminals"
 read TERMINALS
@@ -106,7 +107,7 @@ then
 	sudo pacman -S xfce4-terminal
 	yay -S kitty
 	mkdir -p ~/.config/kitty
-	cp ~/Projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+	cp ~/Projects/motelnine/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 fi
 
 
@@ -116,7 +117,7 @@ if [ $XFCE4PANEL == "y" ]
 then
 	sudo pacman -S xfce4-panel xfce4-goodies
 	yay -S network-manager-applet-gtk2 xfce4-i3-workspaces-plugin-git xfce4-pulseaudio-plugin
-	sudo cp ~/Projects/dotfiles/arch/icons/* /usr/share/pixmaps/
+	sudo cp ~/Projects/motelnine/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
 
 yn "fish"
@@ -125,7 +126,7 @@ if [ $FISH == "y" ]
 then
 	sudo pacman -S fish
 	mkdir -p ~/.config/fish
-	cp ~/Projects/dotfiles/fish/config.fish ~/.config/fish/config.fish
+	cp ~/Projects/motelnine/dotfiles/fish/config.fish ~/.config/fish/config.fish
 fi
 
 yn "lxdm-themes"
