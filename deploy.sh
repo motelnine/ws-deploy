@@ -62,7 +62,7 @@ read I3GAPS
 if [ $I3GAPS == "y" ]
 then
 	sudo pacman -S dmenu lxappearance rofi
-	yay -S i3-gaps feh picom arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons i3lock-fancy
+	yay -S i3-gaps feh picom i3lock-fancy
 	mkdir -p ~/.config/i3
 	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
@@ -72,6 +72,13 @@ then
 	cp ~/Projects/motelnine/dotfiles/picom/picom.conf ~/.config/picom/
 	mkdir -p ~/.config/rofi
 	cp ~/Projects/motelnine/dotfiles/rofi/config.rasi ~/.config/rofi/
+fi
+
+yn "GTK Themes"
+read GTKTHEMES
+if [ $GTKTHEMES == "y" ]
+then
+	yay -S arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons yaru-colors-icon-theme yaru-colors-wallpapers yaru-colors-gtk-theme
 fi
 
 yn "Stacer"
