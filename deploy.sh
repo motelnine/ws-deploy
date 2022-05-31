@@ -190,11 +190,17 @@ fi
 
 yn "Cherry Tree"
 read CHERRYTREE
-if [ $ == "y" ]
+if [ $CHERRYTREE == "y" ]
 then
 	sudo pacman -S cherrytree
 fi
 
+yn "Remmina"
+read $REMMINA
+if [ $REMMINA == "y" ]
+then
+	sudo pacman -S remmina
+fi
 
 yn "BlackArch"
 read BLACKARCH
