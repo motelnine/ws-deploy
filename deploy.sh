@@ -188,6 +188,14 @@ then
 	sudo pacman -S net-tools whois
 fi
 
+yn "Cherry Tree"
+read CHERRYTREE
+if [ $ == "y" ]
+then
+	sudo pacman -S cherrytree
+fi
+
+
 yn "BlackArch"
 read BLACKARCH
 if [ $BLACKARCH == "y" ]
