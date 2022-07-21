@@ -199,7 +199,7 @@ yn "Remmina"
 read $REMMINA
 if [ $REMMINA == "y" ]
 then
-	sudo pacman -S remmina
+	sudo pacman -S remmina parcellite xdotool
 fi
 
 yn "BlackArch"
