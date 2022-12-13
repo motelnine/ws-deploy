@@ -218,3 +218,10 @@ if [ $BLUETOOTH == "y" ]
 then
 	sudo pacman -S bluez bluez-utils blueman
 fi
+
+yn "LMMS Support"
+read LMMS
+if [ $LMMS == "y" ]
+then
+	sudo pacman -S carla pulseaudio-jack
+fi
