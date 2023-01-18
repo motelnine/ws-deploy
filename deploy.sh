@@ -219,9 +219,17 @@ then
 	sudo pacman -S bluez bluez-utils blueman
 fi
 
-yn "LMMS Support"
-read LMMS
-if [ $LMMS == "y" ]
+#yn "LMMS Support"
+#read LMMS
+#if [ $LMMS == "y" ]
+#then
+#	sudo pacman -S carla pulseaudio-jack
+#fi
+
+yn "Generic Drawing Tablet Support"
+read DRAWTAB
+if [ $DRAWTAB == "y" ]
 then
-	sudo pacman -S carla pulseaudio-jack
+	yay -S digimend-kernel-drivers-dkms xorg-xinput
+	echo "Done.\nSee: util/generic-tablet-setup.sh"
 fi
