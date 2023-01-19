@@ -62,7 +62,7 @@ read I3GAPS
 if [ $I3GAPS == "y" ]
 then
 	sudo pacman -S dmenu lxappearance rofi
-	yay -S i3-gaps feh picom i3lock-fancy
+	yay -S i3-wm feh picom i3lock-fancy
 	mkdir -p ~/.config/i3
 	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
