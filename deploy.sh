@@ -17,6 +17,13 @@ mkdir -p ~/Projects
 #	sudo echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 #fi
 
+yn "general dependencies"
+read GENERAL
+if [ $GENERAL == "y" ]
+then
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good
+fi
+
 yn "firefox"
 read FIREFOX
 if [ $FIREFOX == "y" ]
@@ -202,15 +209,15 @@ then
 	sudo pacman -S remmina parcellite xdotool
 fi
 
-yn "BlackArch"
-read BLACKARCH
-if [ $BLACKARCH == "y" ]
-then
-	curl -O https://blackarch.org/strap.sh
-	chmod 755 strap.sh
-	sudo ./strap.sh
-	rm -i strap.sh
-fi
+#yn "BlackArch"
+#read BLACKARCH
+#if [ $BLACKARCH == "y" ]
+#then
+#	curl -O https://blackarch.org/strap.sh
+#	chmod 755 strap.sh
+#	sudo ./strap.sh
+#	rm -i strap.sh
+#fi
 
 yn "Bluetooth Support"
 read BLUETOOTH
