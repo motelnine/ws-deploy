@@ -21,7 +21,7 @@ yn "general dependencies"
 read GENERAL
 if [ $GENERAL == "y" ]
 then
-	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet
 fi
 
 yn "firefox"
@@ -166,6 +166,14 @@ then
 	sudo systemctl start ckb-next-daemon
 fi
 
+yn "Alfa Network Wifi Driver (yay)"
+read ALFAWIFI
+if [ $ALFAWIFI == "y" ]
+then
+	yay -S rtl8812au-dkms-git
+fi
+
+
 yn "Surface addons"
 read SURFACE
 if [ $SURFACE == "y" ]
@@ -240,3 +248,5 @@ then
 	yay -S digimend-kernel-drivers-dkms xorg-xinput
 	echo "Done.\nSee: util/generic-tablet-setup.sh"
 fi
+
+
