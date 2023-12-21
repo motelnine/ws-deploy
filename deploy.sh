@@ -186,7 +186,14 @@ yn "Nvidia"
 read NVIDIA 
 if [ $NVIDIA == "y" ]
 then
-	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils	
+	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils
+fi
+
+yn "Pulse/Alsa 32 Bit"
+read PULSE
+if [ $PULSE == "y" ]
+then
+	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal
 fi
 
 yn "Browser/Gaming Libraries"
