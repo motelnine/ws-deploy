@@ -21,7 +21,7 @@ yn "general dependencies"
 read GENERAL
 if [ $GENERAL == "y" ]
 then
-	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils
 fi
 
 yn "firefox"
