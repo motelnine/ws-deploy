@@ -35,7 +35,7 @@ yn "base-devel"
 read BASEDEVEL
 if [ $BASEDEVEL == "y" ]
 then
-	sudo pacman -S base-devel
+	sudo pacman -S base-devel go
 fi
 
 yn "yay"
@@ -134,12 +134,27 @@ then
 	sudo cp ~/Projects/motelnine/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
 
+yn "Golang Dev Tools"
+read GOLANG
+if [ "$GOLANG" == "y"]
+then
+	yay -S golangci-lint-bin
+fi
+
 yn "Python Dev Tools"
 read PYTHON
 if [ $PYTHON == "y" ]
 then
 	sudo pacman -S python
 	yay -S python-pylint python-psycopg2 python-pandas python3-numpy
+fi
+
+yn "Javascript Dev Tools"
+read "JAVASCRIPT"
+if [ "$JAVASCRIPT" == "y" ]
+then
+	sudo pacman -S nodejs npm yarn
+	yay -S nodejs-jslinter jslint
 fi
 
 yn "fish"
