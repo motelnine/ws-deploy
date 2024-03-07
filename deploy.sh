@@ -134,6 +134,14 @@ then
 	sudo cp ~/Projects/motelnine/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
 
+yn "Python Dev Tools"
+read PYTHON
+if [ $PYTHON == "y" ]
+then
+	sudo pacman -S python
+	yay -S python-pylint python-psycopg2 python-pandas python3-numpy
+fi
+
 yn "fish"
 read FISH
 if [ $FISH == "y" ]
