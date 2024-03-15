@@ -110,7 +110,7 @@ yn "utilities and fonts"
 read UTILS
 if [ $UTILS == "y" ]
 then
-	sudo pacman -S htop aspell-en neofetch numlockx
+	sudo pacman -S htop aspell-en neofetch numlockx ttf-nerd-fonts-symbols
 	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git
 fi	
 
