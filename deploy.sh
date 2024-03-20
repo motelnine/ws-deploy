@@ -264,6 +264,14 @@ then
 	sudo pacman -S bluez bluez-utils blueman
 fi
 
+yn "Red Team Tools"
+read READTEAM
+if [ $REDTEAM == "y" ]
+then
+	sudo pacman -S extra/exploitdb npm metasploit nikto
+	yay -S theharvester-git python-playwright
+fi
+
 #yn "LMMS Support"
 #read LMMS
 #if [ $LMMS == "y" ]
