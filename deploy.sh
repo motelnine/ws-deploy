@@ -129,7 +129,7 @@ yn "xfce4-panel"
 read XFCE4PANEL
 if [ $XFCE4PANEL == "y" ]
 then
-	sudo pacman -S xfce4-panel xfce4-goodies
+	sudo pacman -S xfce4-panel xfce4-goodies xfce4-battery-plugin
 	yay -S network-manager-applet-gtk2 xfce4-i3-workspaces-plugin-git xfce4-pulseaudio-plugin
 	sudo cp ~/Projects/motelnine/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
