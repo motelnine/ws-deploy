@@ -35,7 +35,8 @@ yn "base-devel"
 read BASEDEVEL
 if [ $BASEDEVEL == "y" ]
 then
-	sudo pacman -S base-devel go
+	sudo pacman -S base-devel go rustup
+	rustup default stable
 fi
 
 yn "yay"
