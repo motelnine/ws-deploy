@@ -21,7 +21,7 @@ yn "general dependencies"
 read GENERAL
 if [ $GENERAL == "y" ]
 then
-	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol
 fi
 
 yn "firefox"
@@ -47,6 +47,24 @@ then
 	cd yay
 	makepkg -si
 fi
+
+yn "media players":
+read MEDIAPLAYERS
+if [ $MEDIAPLAYERS == "y" ]
+then
+	sudo pacman -S vlc rhythmbox
+	yay -S tauon-music-box
+fi
+
+
+yn "design tools":
+read DESIGNTOOLS
+if [ $DESIGNTOOLS == "y" ]
+then
+	sudo pacman -S gimp blender krita
+	yay -S aseprite
+fi
+
 
 yn "keepassxc"
 read KEEPASSXC
