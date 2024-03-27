@@ -287,8 +287,8 @@ yn "Red Team Tools"
 read READTEAM
 if [ $REDTEAM == "y" ]
 then
-	sudo pacman -S extra/exploitdb npm metasploit nikto
-	yay -S theharvester-git python-playwright
+	sudo pacman -S extra/exploitdb npm metasploit nikto extra/exploitdb
+	yay -S theharvester-git python-playwright burpsuite
 fi
 
 #yn "LMMS Support"
