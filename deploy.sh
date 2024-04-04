@@ -53,7 +53,7 @@ yn "media players":
 read MEDIAPLAYERS
 if [ $MEDIAPLAYERS == "y" ]
 then
-	sudo pacman -S vlc rhythmbox
+	sudo pacman -S vlc rhythmbox audacious audacious-plugin
 	yay -S tauon-music-box
 fi
 
