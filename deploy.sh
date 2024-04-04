@@ -284,7 +284,7 @@ then
 fi
 
 yn "Red Team Tools"
-read READTEAM
+read REDTEAM
 if [ $REDTEAM == "y" ]
 then
 	sudo pacman -S extra/exploitdb npm metasploit nikto extra/exploitdb
