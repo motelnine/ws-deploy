@@ -155,7 +155,7 @@ fi
 
 yn "Golang Dev Tools"
 read GOLANG
-if [ "$GOLANG" == "y"]
+if [ "$GOLANG" == "y" ]
 then
 	yay -S golangci-lint-bin
 fi
@@ -260,7 +260,7 @@ then
 fi
 
 yn "Remmina"
-read $REMMINA
+read REMMINA
 if [ $REMMINA == "y" ]
 then
 	sudo pacman -S remmina parcellite xdotool
