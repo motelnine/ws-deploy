@@ -168,6 +168,13 @@ then
 	yay -S python-pylint python-psycopg2 python-pandas python3-numpy
 fi
 
+yn "Dbeaver"
+read DBEAVER
+if [ $DBEAVER == "y" ]
+then
+	yay -S dbeaver
+fi
+
 yn "Javascript Dev Tools"
 read "JAVASCRIPT"
 if [ "$JAVASCRIPT" == "y" ]
@@ -238,12 +245,12 @@ then
 	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal
 fi
 
-yn "Browser/Gaming Libraries"
-read LIBVA
-if [ $LIBVA == "y" ]
-then
-	sudo pacman -S libva lib32-libva lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse
-fi
+#yn "Browser/Gaming Libraries"
+#read LIBVA
+#if [ $LIBVA == "y" ]
+#then
+#	sudo pacman -S libva lib32-libva lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse
+#fi
 
 yn "NetTools"
 read NETTOOLS
