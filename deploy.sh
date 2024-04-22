@@ -24,6 +24,16 @@ then
 	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol core/less
 fi
 
+yn "replace pulseaudio with pipewire/easyeffects (recommended)?"
+read "PIPEWIRE"
+if [ $PIPEWIRE == "y" ]
+then
+	sudo pacman -Rdd pulseaudio
+	sudo pacman -S pipewire-{jack,alsa,pulse}
+	sudo pacman -S easyeffects
+	systemctl --user enable --now pipewire pipewire-pulse
+fi
+
 yn "firefox"
 read FIREFOX
 if [ $FIREFOX == "y" ]
