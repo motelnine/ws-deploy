@@ -25,13 +25,20 @@ then
 fi
 
 yn "replace pulseaudio with pipewire/easyeffects (recommended)?"
-read "PIPEWIRE"
+read PIPEWIRE
 if [ $PIPEWIRE == "y" ]
 then
 	sudo pacman -Rdd pulseaudio
 	sudo pacman -S pipewire-{jack,alsa,pulse}
 	sudo pacman -S easyeffects
 	systemctl --user enable --now pipewire pipewire-pulse
+fi
+
+yn "gnome extras"
+read GNOMEEXTRAS
+if [ $GNOMEEXTRAS == "y" ]
+then
+	sudo pacman -S gnome-extras
 fi
 
 yn "firefox"
