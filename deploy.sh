@@ -273,7 +273,7 @@ yn "NetTools"
 read NETTOOLS
 if [ $NETTOOLS == "y" ]
 then
-	sudo pacman -S net-tools whois
+	sudo pacman -S net-tools whois wireshark-qt
 fi
 
 yn "Cherry Tree"
