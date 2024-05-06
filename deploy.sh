@@ -1,6 +1,8 @@
 #!/bin/bash
 yn () {
-	printf "Install '$1' [y/n] "
+	echo -e "\n\n---------------[ \e[34m$1\e[0m ] ---------------"
+	echo -e  "Install \e[33m$1\e[0m?"
+	echo -n -e "[\e[32my\e[0m/\e[31mn\e[0m] > "
 }
 
 echo "Creating ~/Downloads"
@@ -91,7 +93,8 @@ then
 	sudo pacman -S keepassxc
 fi
 
-printf "Clone dotfiles [y/n]"
+#printf "Clone dotfiles [y/n]"
+yn "dotfiles"
 read DOTFILES
 if [ $DOTFILES == y ]
 then
@@ -315,7 +318,7 @@ then
 	yay -S theharvester-git python-playwright burpsuite nessus burpsuite aircrack-ng
 	# yay -S ghidra-desktop
 	echo "\n\nNote: you may need to manually install blackarch/hash-identifier or use blackarch repo\n\n"
-
+	# blackarch/wifiphisher
 fi
 
 #yn "LMMS Support"
