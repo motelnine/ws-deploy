@@ -315,7 +315,7 @@ read REDTEAM
 if [ $REDTEAM == "y" ]
 then
 	sudo pacman -S extra/exploitdb npm metasploit nikto extra/exploitdb gnu-netcat hashcat
-	yay -S theharvester-git python-playwright burpsuite nessus burpsuite aircrack-ng
+	yay -S theharvester-git python-playwright burpsuite nessus burpsuite aircrack-ng python-shodan
 	# yay -S ghidra-desktop
 	echo "\n\nNote: you may need to manually install blackarch/hash-identifier or use blackarch repo\n\n"
 	# blackarch/wifiphisher
