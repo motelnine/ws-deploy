@@ -23,16 +23,16 @@ yn "general dependencies"
 read GENERAL
 if [ $GENERAL == "y" ]
 then
-	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol core/less
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol core/less arp-scan --noconfirm
 fi
 
 yn "replace pulseaudio with pipewire/easyeffects (recommended)?"
 read PIPEWIRE
 if [ $PIPEWIRE == "y" ]
 then
-	sudo pacman -Rdd pulseaudio
-	sudo pacman -S pipewire-{jack,alsa,pulse}
-	sudo pacman -S easyeffects
+	sudo pacman -Rdd pulseaudio --noconfirm
+	sudo pacman -S pipewire-{jack,alsa,pulse} --noconfirm
+	sudo pacman -S easyeffects --noconfurm
 	systemctl --user enable --now pipewire pipewire-pulse
 fi
 
@@ -40,21 +40,21 @@ yn "gnome extras"
 read GNOMEEXTRAS
 if [ $GNOMEEXTRAS == "y" ]
 then
-	sudo pacman -S gnome-extras
+	sudo pacman -S gnome-extras --noconfirm
 fi
 
 yn "firefox"
 read FIREFOX
 if [ $FIREFOX == "y" ]
 then
-	sudo pacman -S firefox
+	sudo pacman -S firefox --noconfirm
 fi
 
 yn "base-devel"
 read BASEDEVEL
 if [ $BASEDEVEL == "y" ]
 then
-	sudo pacman -S base-devel go rustup
+	sudo pacman -S base-devel go rustup --noconfirm
 	rustup default stable
 fi
 
@@ -72,8 +72,8 @@ yn "media players":
 read MEDIAPLAYERS
 if [ $MEDIAPLAYERS == "y" ]
 then
-	sudo pacman -S vlc rhythmbox audacious audacious-plugin
-	yay -S tauon-music-box
+	sudo pacman -S vlc rhythmbox audacious audacious-plugin --noconfirm
+	yay -S tauon-music-box --noconfirm
 fi
 
 
@@ -81,8 +81,8 @@ yn "design tools":
 read DESIGNTOOLS
 if [ $DESIGNTOOLS == "y" ]
 then
-	sudo pacman -S gimp blender krita
-	yay -S aseprite
+	sudo pacman -S gimp blender krita --noconfirm
+	yay -S aseprite --noconfirm
 fi
 
 
@@ -90,7 +90,7 @@ yn "keepassxc"
 read KEEPASSXC
 if [ $KEEPASSXC == "y" ]
 then
-	sudo pacman -S keepassxc
+	sudo pacman -S keepassxc --noconfirm
 fi
 
 #printf "Clone dotfiles [y/n]"
@@ -108,7 +108,7 @@ read I3GAPS
 if [ $I3GAPS == "y" ]
 then
 	sudo pacman -S dmenu lxappearance rofi
-	yay -S i3-wm feh picom i3lock-fancy
+	yay -S i3-wm feh picom i3lock-fancy --noconfirm
 	mkdir -p ~/.config/i3
 	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
@@ -124,14 +124,19 @@ yn "GTK Themes"
 read GTKTHEMES
 if [ $GTKTHEMES == "y" ]
 then
-	yay -S arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons yaru-colors-icon-theme yaru-colors-wallpapers yaru-colors-gtk-theme
+	yay -S arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons yaru-colors-icon-theme yaru-colors-wallpapers yaru-colors-gtk-theme --noconfirm
 fi
 
-yn "Stacer"
-read STACER
+yn "Stacer" read STACER
 if [ $STACER == "y" ]
 then
-	yay -S stacer
+	yay -S stacer --noconfirm
+fi
+
+yn "Virtualbox" read VIRTUALBOX
+if [ $VIRTUALBOX == "y" ]
+then
+	yay -S virtualbox linux-headers virtualbox-host-modules-arch --noconfirm
 fi
 
 yn "vim plugins"
@@ -149,16 +154,16 @@ yn "utilities and fonts"
 read UTILS
 if [ $UTILS == "y" ]
 then
-	sudo pacman -S htop aspell-en neofetch numlockx ttf-nerd-fonts-symbols
-	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git
+	sudo pacman -S htop aspell-en neofetch numlockx ttf-nerd-fonts-symbols --noconfirm
+	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git --noconfirm
 fi	
 
 yn "terminals"
 read TERMINALS
 if [ $TERMINALS == "y" ]
 then
-	sudo pacman -S xfce4-terminal
-	yay -S kitty
+	sudo pacman -S xfce4-terminal --noconfirm
+	yay -S kitty --noconfirm
 	mkdir -p ~/.config/kitty
 	cp ~/Projects/motelnine/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 fi
@@ -168,8 +173,8 @@ yn "xfce4-panel"
 read XFCE4PANEL
 if [ $XFCE4PANEL == "y" ]
 then
-	sudo pacman -S xfce4-panel xfce4-goodies xfce4-battery-plugin network-manager-applet
-	yay -S network-manager-applet-gtk2 xfce4-i3-workspaces-plugin-git xfce4-pulseaudio-plugin
+	sudo pacman -S xfce4-panel xfce4-goodies xfce4-battery-plugin network-manager-applet --noconfirm
+	yay -S network-manager-applet-gtk2 xfce4-i3-workspaces-plugin-git xfce4-pulseaudio-plugin --noconfirm
 	sudo cp ~/Projects/motelnine/dotfiles/arch/icons/* /usr/share/pixmaps/
 fi
 
@@ -177,37 +182,37 @@ yn "Golang Dev Tools"
 read GOLANG
 if [ "$GOLANG" == "y" ]
 then
-	yay -S golangci-lint-bin
+	yay -S golangci-lint-bin --noconfirm
 fi
 
 yn "Python Dev Tools"
 read PYTHON
 if [ $PYTHON == "y" ]
 then
-	sudo pacman -S python
-	yay -S python-pylint python-psycopg2 python-pandas python3-numpy
+	sudo pacman -S python --noconfirm
+	yay -S python-pylint python-psycopg2 python-pandas python3-numpy --noconfirm
 fi
 
 yn "Dbeaver"
 read DBEAVER
 if [ $DBEAVER == "y" ]
 then
-	yay -S dbeaver
+	yay -S dbeaver --noconfirm
 fi
 
 yn "Javascript Dev Tools"
 read "JAVASCRIPT"
 if [ "$JAVASCRIPT" == "y" ]
 then
-	sudo pacman -S nodejs npm yarn
-	yay -S nodejs-jslinter jslint
+	sudo pacman -S nodejs npm yarn --noconfirm
+	yay -S nodejs-jslinter jslint --noconfirm
 fi
 
 yn "fish"
 read FISH
 if [ $FISH == "y" ]
 then
-	sudo pacman -S fish
+	sudo pacman -S fish --noconfirm
 	mkdir -p ~/.config/fish
 	cp ~/Projects/motelnine/dotfiles/fish/config.fish ~/.config/fish/config.fish
 fi
@@ -216,21 +221,21 @@ yn "lxdm-themes"
 read LXDM
 if [ $LXDM == "y" ]
 then
-	yay -S lxdm-themes 
+	yay -S lxdm-themes --noconfirm
 fi
 
 yn "xfce4-i3-workspaces-plugin-git"
 read SWITCHER
 if [ $SWITCHER == "y" ]
 then
-	yay -S xfce4-i3-workspaces-plugin-git
+	yay -S xfce4-i3-workspaces-plugin-git --noconfirm
 fi
 
 yn "ckb-next"
 read CKBNEXT
 if [ $CKBNEXT == "y" ]
 then
-	yay -S ckb-next
+	yay -S ckb-next --noconfirm
 	sudo systemctl enable ckb-next-daemon
 	sudo systemctl start ckb-next-daemon
 fi
@@ -239,7 +244,7 @@ yn "Alfa Network Wifi Driver (yay)"
 read ALFAWIFI
 if [ $ALFAWIFI == "y" ]
 then
-	yay -S rtl8812au-dkms-git
+	yay -S rtl8812au-dkms-git --noconfirm
 fi
 
 
@@ -247,22 +252,22 @@ yn "Surface addons"
 read SURFACE
 if [ $SURFACE == "y" ]
 then
-	sudo pacman -S iw
-	sudo pacman -S xf86-input-synaptic
+	sudo pacman -S iw --noconfirm
+	sudo pacman -S xf86-input-synaptic --noconfirm
 fi
 
 yn "Nvidia"
 read NVIDIA 
 if [ $NVIDIA == "y" ]
 then
-	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils
+	sudo pacman -S nvidia nvidia-utils nvidia-settings lib32-nvidia-utils --noconfirm
 fi
 
 yn "Pulse/Alsa 32 Bit"
 read PULSE
 if [ $PULSE == "y" ]
 then
-	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal
+	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal --noconfirm
 fi
 
 #yn "Browser/Gaming Libraries"
@@ -276,21 +281,21 @@ yn "NetTools"
 read NETTOOLS
 if [ $NETTOOLS == "y" ]
 then
-	sudo pacman -S net-tools whois wireshark-qt
+	sudo pacman -S net-tools whois wireshark-qt --noconfirm
 fi
 
 yn "Cherry Tree"
 read CHERRYTREE
 if [ $CHERRYTREE == "y" ]
 then
-	sudo pacman -S cherrytree
+	sudo pacman -S cherrytree --noconfirm
 fi
 
 yn "Remmina"
 read REMMINA
 if [ $REMMINA == "y" ]
 then
-	sudo pacman -S remmina parcellite xdotool
+	sudo pacman -S remmina parcellite xdotool --noconfirm
 fi
 
 #yn "BlackArch"
@@ -307,15 +312,15 @@ yn "Bluetooth Support"
 read BLUETOOTH
 if [ $BLUETOOTH == "y" ]
 then
-	sudo pacman -S bluez bluez-utils blueman
+	sudo pacman -S bluez bluez-utils blueman --noconfirm
 fi
 
 yn "Red Team Tools"
 read REDTEAM
 if [ $REDTEAM == "y" ]
 then
-	sudo pacman -S extra/exploitdb npm metasploit nikto extra/exploitdb gnu-netcat hashcat
-	yay -S theharvester-git python-playwright burpsuite nessus burpsuite aircrack-ng python-shodan
+	sudo pacman -S extra/exploitdb npm metasploit nikto extra/exploitdb gnu-netcat hashcat hydra --noconfirm
+	yay -S theharvester-git python-playwright burpsuite nessus burpsuite aircrack-ng python-shodan --noconfirm
 	# yay -S ghidra-desktop
 	echo "\n\nNote: you may need to manually install blackarch/hash-identifier or use blackarch repo\n\n"
 	# blackarch/wifiphisher
@@ -332,7 +337,7 @@ yn "Generic Drawing Tablet Support"
 read DRAWTAB
 if [ $DRAWTAB == "y" ]
 then
-	yay -S digimend-kernel-drivers-dkms xorg-xinput
+	yay -S digimend-kernel-drivers-dkms xorg-xinput --noconfirm
 	echo "Done.\nSee: util/generic-tablet-setup.sh"
 fi
 
