@@ -144,7 +144,7 @@ fi
 yn "Virtualbox" read VIRTUALBOX
 if [ $VIRTUALBOX == "y" ]
 then
-	yay -S virtualbox linux-headers virtualbox-host-modules-arch --noconfirm
+	yay -S virtualbox linux-headers virtualbox-host-modules-arch virtualbox-guest-utils --noconfirm
 fi
 
 yn "vim plugins"
