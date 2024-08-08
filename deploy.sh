@@ -40,7 +40,7 @@ yn "Install Easyeffects?"
 read EASYEFFECTS
 if [ $EASYEFFECTS == "y" ]
 then
-	sudo pacman -S easyeffects
+	sudo pacman -S easyeffects lsp-plugins
 fi
 
 
