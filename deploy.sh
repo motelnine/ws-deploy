@@ -289,7 +289,7 @@ yn "NetTools"
 read NETTOOLS
 if [ $NETTOOLS == "y" ]
 then
-	sudo pacman -S net-tools whois wireshark-qt --noconfirm
+	sudo pacman -S net-tools whois wireshark-qt inetutils --noconfirm
 fi
 
 yn "Cherry Tree"
