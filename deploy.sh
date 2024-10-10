@@ -135,13 +135,15 @@ then
 	yay -S arc-gtk-theme material-black-colors-theme graphite-gtk-theme nordic-theme candy-icons yaru-colors-icon-theme yaru-colors-wallpapers yaru-colors-gtk-theme --noconfirm
 fi
 
-yn "Stacer" read STACER
+yn "Stacer"
+read STACER
 if [ $STACER == "y" ]
 then
 	yay -S stacer --noconfirm
 fi
 
-yn "Virtualbox" read VIRTUALBOX
+yn "Virtualbox"
+read VIRTUALBOX
 if [ $VIRTUALBOX == "y" ]
 then
 	yay -S virtualbox linux-headers virtualbox-host-modules-arch virtualbox-guest-utils --noconfirm
@@ -252,7 +254,8 @@ yn "Alfa Network Wifi Driver (yay)"
 read ALFAWIFI
 if [ $ALFAWIFI == "y" ]
 then
-	yay -S rtl8812au-dkms-git --noconfirm
+	#yay -S rtl8812au-dkms-git --noconfirm
+	yay -S rtl8812au-aircrack-dkms --noconfirm
 fi
 
 
