@@ -164,7 +164,7 @@ yn "utilities and fonts"
 read UTILS
 if [ $UTILS == "y" ]
 then
-	sudo pacman -S htop aspell-en hunspell-en_us neofetch numlockx ttf-nerd-fonts-symbols ttf-roboto --noconfirm
+	sudo pacman -S htop aspell-en hunspell-en_us neofetch numlockx nerd-fonts ttf-roboto --noconfirm
 	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git --noconfirm
 fi	
 
