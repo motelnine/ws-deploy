@@ -33,14 +33,16 @@ then
 	#sudo pacman -Rdd pulseaudio --noconfirm
 	sudo pacman -S pipewire-{jack,alsa,pulse} --noconfirm
 	sudo pacman -S easyeffects --noconfurm
-	systemctl --user enable --now pipewire pipewire-pulse
+	systemctl --user enable --now pipewire pipewire-pulse wireplumber pipewire-alsa pipewire-jack
+	systemctl --user enable pipewire.socket pipewire-pulse.socket wireplumber.service
 fi
 
 yn "Install Easyeffects?"
 read EASYEFFECTS
 if [ $EASYEFFECTS == "y" ]
 then
-	sudo pacman -S easyeffects lsp-plugins
+	sudo pacman -S easyeffects lsp-plugins --noconfirm
+	yay -S linux-studio-bin --noconfirm
 fi
 
 
