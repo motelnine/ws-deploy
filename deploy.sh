@@ -42,7 +42,7 @@ read EASYEFFECTS
 if [ $EASYEFFECTS == "y" ]
 then
 	sudo pacman -S easyeffects lsp-plugins --noconfirm
-	yay -S linux-studio-bin --noconfirm
+	#yay -S linux-studio-bin --noconfirm
 fi
 
 
