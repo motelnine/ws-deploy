@@ -149,6 +149,7 @@ read VIRTUALBOX
 if [ $VIRTUALBOX == "y" ]
 then
 	yay -S virtualbox linux-headers virtualbox-host-modules-arch virtualbox-guest-utils --noconfirm
+	sudo pacman -S qemu edk2-ovmf
 fi
 
 yn "vim plugins"
