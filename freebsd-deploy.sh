@@ -34,6 +34,13 @@ doas pkg install firefox
 
 cd ~/Projects/motelnine
 
+doas pkg install portsnap
+doas cp /usr/local/etc/portsnap.conf.sample /usr/local/etc/portsnap.conf
+doas mkdir -p /var/db/portsnap
+doas chown -R root:wheel /var/db/portsnap
+doas chmod -R 755 /var/db/portsnap
+doas portsnap fetch
+doas portsnap extract
 
 # dotfile stuff
 git clone git@github.com:motelnine/dotfiles.git
