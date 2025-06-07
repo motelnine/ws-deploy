@@ -12,7 +12,7 @@ doas pkg install fish bash
 
 # i3
 doas pkg install i3 i3lock dmenu polybar rofi nerd-fonts
-doas pkg install keepassxc cherrytree pasystray lxappearance thunar nautilus
+doas pkg install keepassxc cherrytree pasystray lxappearance thunar nautilus file-roller
 doas pkg install papirus-icon-theme pop-icon-theme materia-gtk-theme
 
 
@@ -31,6 +31,8 @@ doas pkg install feh
 doas pkg install webfonts
 
 doas pkg install firefox
+
+
 
 cd ~/Projects/motelnine
 
