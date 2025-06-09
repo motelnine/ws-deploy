@@ -169,7 +169,9 @@ if [ $UTILS == "y" ]
 then
 	sudo pacman -S htop aspell-en hunspell-en_us fastfetch numlockx nerd-fonts ttf-roboto --noconfirm
 	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git --noconfirm
-	fastfetch --gen-config
+	#fastfetch --gen-config
+	mkdir -p ~/.config/fastfetch
+	cp defaults/config.jsonc ~/.config/fastfetch/config.jsonc
 fi	
 
 yn "terminals"
