@@ -117,8 +117,8 @@ yn "i3-gaps"
 read I3GAPS
 if [ $I3GAPS == "y" ]
 then
-	sudo pacman -S dmenu lxappearance rofi
-	yay -S i3-wm feh picom i3lock-fancy --noconfirm
+	sudo pacman -S i3 xorg dmenu lxappearance rofi --noconfirm
+	yay -S feh picom i3lock-fancy --noconfirm
 	mkdir -p ~/.config/i3
 	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
@@ -167,8 +167,9 @@ yn "utilities and fonts"
 read UTILS
 if [ $UTILS == "y" ]
 then
+	# 86 cava and agave
 	sudo pacman -S htop aspell-en hunspell-en_us fastfetch numlockx nerd-fonts ttf-roboto --noconfirm
-	yay -S cava agave nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git --noconfirm
+	yay -S nerd-fonts-jetbrains-mono ttf-jetbrains-mono-git --noconfirm
 	#fastfetch --gen-config
 	mkdir -p ~/.config/fastfetch
 	cp defaults/config.jsonc ~/.config/fastfetch/config.jsonc
