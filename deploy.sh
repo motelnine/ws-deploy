@@ -266,6 +266,16 @@ then
 fi
 
 
+yn "Power Management (tlp)"
+read POWMAN
+if [ $POWMAN == "y" ]
+then
+	sudo pacman -S tlp tlp-rdw powertop acpi
+	sudo systemctl enable tlp
+	sudo systemctl start tlp
+fi
+
+
 yn "Surface addons"
 read SURFACE
 if [ $SURFACE == "y" ]
