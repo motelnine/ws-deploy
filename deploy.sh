@@ -229,9 +229,10 @@ yn "fish"
 read FISH
 if [ $FISH == "y" ]
 then
-	sudo pacman -S fish --noconfirm
+	sudo pacman -S fish fisher --noconfirm
 	mkdir -p ~/.config/fish
 	cp ~/Projects/motelnine/dotfiles/fish/config.fish ~/.config/fish/config.fish
+	fisher install edc/bass
 fi
 
 yn "lxdm-themes"
