@@ -221,7 +221,7 @@ yn "Javascript Dev Tools"
 read "JAVASCRIPT"
 if [ "$JAVASCRIPT" == "y" ]
 then
-	sudo pacman -S nodejs npm yarn --noconfirm
+	sudo pacman -S nodejs npm npx yarn --noconfirm
 	yay -S nodejs-jslinter jslint --noconfirm
 fi
 
