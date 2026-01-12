@@ -299,6 +299,13 @@ then
 	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal --noconfirm
 fi
 
+yn "Sway"
+read SWAY
+if [ $SWAY == "y" ]
+then
+	sudo pacman -S sway waybar wofi
+fi
+
 #yn "Browser/Gaming Libraries"
 #read LIBVA
 #if [ $LIBVA == "y" ]
