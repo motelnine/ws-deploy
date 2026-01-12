@@ -299,6 +299,12 @@ then
 	sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal --noconfirm
 fi
 
+yn "Hyprland"
+read "HYPR"
+if [ $HYPR == "y" ]
+then
+	sudo pacman -S hyprland hyprlauncher hyprpaper --noconfirm
+
 yn "Sway"
 read SWAY
 if [ $SWAY == "y" ]
