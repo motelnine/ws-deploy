@@ -303,7 +303,7 @@ yn "Sway"
 read SWAY
 if [ $SWAY == "y" ]
 then
-	sudo pacman -S sway waybar wofi
+	sudo pacman -S sway waybar wofi swaybg
 fi
 
 #yn "Browser/Gaming Libraries"
