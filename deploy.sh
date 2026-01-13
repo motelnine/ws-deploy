@@ -304,6 +304,10 @@ read "HYPR"
 if [ $HYPR == "y" ]
 then
 	sudo pacman -S hyprland hyprlauncher hyprpaper hyprlock --noconfirm
+	mkdir ~/.config/hypr
+	mkdir ~/.config/waybar
+	cp ~/Projects/motelnine/dotfiles/hypr/* ~/.config/hypr/
+	cp ~/Projects/motelnine/dotfiles/waybar/* ~/.config/waybar/
 fi
 
 yn "Sway"
