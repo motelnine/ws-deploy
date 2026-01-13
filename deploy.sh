@@ -303,7 +303,8 @@ yn "Hyprland"
 read "HYPR"
 if [ $HYPR == "y" ]
 then
-	sudo pacman -S hyprland hyprlauncher hyprpaper --noconfirm
+	sudo pacman -S hyprland hyprlauncher hyprpaper hyprlock --noconfirm
+fi
 
 yn "Sway"
 read SWAY
