@@ -33,6 +33,7 @@ then
 	#sudo pacman -Rdd pulseaudio --noconfirm
 	sudo pacman -S pipewire-{jack,alsa,pulse} --noconfirm
 	sudo pacman -S easyeffects --noconfirm
+	sudo pacman -S pavucontrol --noconfirm
 	systemctl --user enable --now pipewire pipewire-pulse wireplumber #pipewire-alsa pipewire-jack
 	systemctl --user enable pipewire.socket pipewire-pulse.socket #wireplumber.service
 fi
