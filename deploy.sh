@@ -23,7 +23,7 @@ yn "general dependencies"
 read GENERAL
 if [ $GENERAL == "y" ]
 then
-	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol core/less arp-scan --noconfirm
+	sudo pacman -S ntfs-3g ffmpegthumbnailer gst-libav gst-plugins-base gst-plugins-good network-manager-applet dnsutils inetutils nmap pavucontrol core/less arp-scan tumbler ffmpegthumbnailer --noconfirm
 fi
 
 yn "replace pulseaudio with pipewire/easyeffects (recommended)?"
@@ -226,6 +226,13 @@ then
 	yay -S nodejs-jslinter jslint --noconfirm
 fi
 
+yn "Wine"
+read "WINE"
+if [ "WINE" == "y" ]
+then
+	sudo pacman -S wine giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 vulkan-icd-loader lib32-vulkan-icd-loader --noconfirm
+fi
+
 yn "fish"
 read FISH
 if [ $FISH == "y" ]
@@ -304,7 +311,7 @@ yn "Hyprland"
 read "HYPR"
 if [ $HYPR == "y" ]
 then
-	sudo pacman -S hyprland hyprlauncher hyprpaper hyprlock --noconfirm
+	sudo pacman -S hyprland hyprlauncher hyprpaper hyprlock hyprshot hyprpicker --noconfirm
 	mkdir ~/.config/hypr
 	mkdir ~/.config/waybar
 	cp ~/Projects/motelnine/dotfiles/hypr/* ~/.config/hypr/
