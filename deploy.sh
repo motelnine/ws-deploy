@@ -118,7 +118,7 @@ yn "i3-gaps"
 read I3GAPS
 if [ $I3GAPS == "y" ]
 then
-	sudo pacman -S i3 xorg dmenu lxappearance rofi --noconfirm
+	sudo pacman -S i3 xorg dmenu lxappearance rofi autotiling --noconfirm
 	yay -S feh picom i3lock-fancy --noconfirm
 	mkdir -p ~/.config/i3
 	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
