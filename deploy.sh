@@ -84,6 +84,9 @@ read MEDIAPLAYERS
 if [ $MEDIAPLAYERS == "y" ]
 then
 	sudo pacman -S vlc vlc-plugins-all rhythmbox audacious audacious-plugin --noconfirm
+	sudo pacman -S vlc-plugin-ffmpeg vlc-plugin-matroska vlc-plugin-x264 vlc-plugin-x265 vlc-plugin-ass vlc-plugin-dvd vlc-plugin-bluray vlc-plugin-srt libdvdcss libbluray --noconfirm
+	sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly --noconfirm
+	sudo pacman -S ffmpegthumbnailer tumbler --noconfirm
 	yay -S tauon-music-box --noconfirm
 fi
 
