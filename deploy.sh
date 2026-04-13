@@ -366,6 +366,13 @@ fi
 #	rm -i strap.sh
 #fi
 
+yn "ASUS Settings"
+read ASUS
+if [ $ASUS == "y" ]
+then
+	yay -S asusctl asusctl-gui rog-control-center-x11 --noconfirm
+fi
+
 yn "Bluetooth Support"
 read BLUETOOTH
 if [ $BLUETOOTH == "y" ]
