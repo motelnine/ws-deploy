@@ -54,6 +54,25 @@ then
 	sudo pacman -S gnome-extras --noconfirm
 fi
 
+
+yn "SDDM Login Manager"
+read SDDM
+if [ $SDDM == "y" ]
+then
+	sudo pacman -S sddm qt6-declarative qt6-5compat qt6-svg --noconfirm
+	sudo pacman -S qt6-multimedia qt6-multimedia-ffmpeg --noconfirm
+	sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly --noconfirm
+	sudo pacman -S sddm --noconfirm
+	sudo mkdir -p /usr/share/sddm/themes/
+	sudo mkdir -p sudo mkdir /etc/sddm.conf.d/
+	sudo tar xvfz resources/sddm/pixel-night-city.tar.gz -C /usr/share/sddm/themes/
+	sudo cp resources/sddm/theme.conf /etc/sddm.conf.d/theme.conf
+	sudo systemctl disable gdm
+	sudo systemctl disable lxdm
+	sudo systemctl enable sddm
+fi
+
+
 yn "firefox"
 read FIREFOX
 if [ $FIREFOX == "y" ]
