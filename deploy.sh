@@ -67,6 +67,8 @@ then
 	sudo mkdir -p sudo mkdir /etc/sddm.conf.d/
 	sudo tar xvfz resources/sddm/pixel-night-city.tar.gz -C /usr/share/sddm/themes/
 	sudo cp resources/sddm/theme.conf /etc/sddm.conf.d/theme.conf
+	mkdir -p ~/.local/share/sddm
+	ln -s /dev/null /home/matthew/.local/share/sddm/xorg-session.log
 	sudo systemctl disable gdm
 	sudo systemctl disable lxdm
 	sudo systemctl enable sddm
