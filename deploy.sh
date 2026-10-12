@@ -128,6 +128,14 @@ then
 	sudo pacman -S keepassxc --noconfirm
 fi
 
+yn "artcraft suite"
+read ARTCRAFT
+if [ $ARTCRAFT == "y" ]
+then
+	yay -S photocraft-bin vectorcraft-bin filmcraft-bin lightcraft-bin pdfcraft-bin effectcraft-bin designcraft-bin wordcraft-bin soundcraft-bin deckcraft-bin cadcraft-bin gridcraft --noconfirm
+fi
+
+
 #printf "Clone dotfiles [y/n]"
 yn "dotfiles"
 read DOTFILES
