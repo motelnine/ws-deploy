@@ -132,7 +132,7 @@ yn "artcraft suite"
 read ARTCRAFT
 if [ $ARTCRAFT == "y" ]
 then
-	yay -S photocraft-bin vectorcraft-bin filmcraft-bin lightcraft-bin pdfcraft-bin effectcraft-bin designcraft-bin wordcraft-bin soundcraft-bin deckcraft-bin cadcraft-bin gridcraft --noconfirm
+	yay -S photocraft-bin vectorcraft-bin filmcraft-bin lightcraft-bin pdfcraft-bin effectcraft-bin designcraft-bin wordcraft-bin soundcraft-bin deckcraft-bin cadcraft-bin gridcraft-bin texturecraft-bin  --noconfirm
 fi
 
 
