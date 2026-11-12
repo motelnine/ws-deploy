@@ -153,15 +153,35 @@ then
 	sudo pacman -S i3 xorg dmenu lxappearance rofi autotiling --noconfirm
 	yay -S feh picom i3lock-fancy --noconfirm
 	mkdir -p ~/.config/i3
-	cp ~/Projects/motelnine/dotfiles/i3/config ~/.config/i3/config
+	cp ~/Projects/motelnine/dotfiles/_config/i3/config ~/.config/i3/config
 	mkdir -p ~/Pictures
 	mkdir -p ~/Pictures/Wallpaper
 	cp ~/Projects/motelnine/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
 	mkdir -p ~/.config/picom
-	cp ~/Projects/motelnine/dotfiles/picom/picom.conf ~/.config/picom/
+	cp ~/Projects/motelnine/dotfiles/_config/picom/picom.conf ~/.config/picom/
 	mkdir -p ~/.config/rofi
-	cp ~/Projects/motelnine/dotfiles/rofi/config.rasi ~/.config/rofi/
+	cp ~/Projects/motelnine/dotfiles/_config/rofi/config.rasi ~/.config/rofi/
 fi
+
+yn "sway"
+read SWAY
+if [ $SWAY == "y" ]
+then
+	sudo pacman -S swaygrim slurp swaylock swaybg fuzzel nwg-menu --noconfirm
+
+	mkdir ~/.config/sway
+	mkdir ~/.config/waybar
+	mkdir ~/.config/fuzzel/
+
+	cp ~/Projects/motelnine/dotfiles/_config/sway/config ~/.config/sway/
+	cp ~/Projects/motelnine/dotfiles/_config/waybar/config ~/.config/waybar/
+	cp ~/Projects/motelnine/dotfiles/_config/fuzzel/* ~/.config/fuzzel/
+
+	mkdir -p ~/Pictures
+	mkdir -p ~/Pictures/Wallpaper
+	cp ~/Projects/motelnine/dotfiles/wallpaper/* ~/Pictures/Wallpaper/
+fi
+
 
 yn "GTK Themes"
 read GTKTHEMES
