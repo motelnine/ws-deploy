@@ -167,15 +167,19 @@ yn "sway"
 read SWAY
 if [ $SWAY == "y" ]
 then
-	sudo pacman -S swaygrim slurp swaylock swaybg fuzzel nwg-menu --noconfirm
+	sudo pacman -S swaygrim slurp swaylock swaybg fuzzel nwg-menu nwg-drawer --noconfirm
 
 	mkdir ~/.config/sway
 	mkdir ~/.config/waybar
-	mkdir ~/.config/fuzzel/
+	mkdir ~/.config/fuzzel
+	mkdir ~/.config/nwg-drawer
+	mkdir ~/.config/nwg-panel
 
 	cp ~/Projects/motelnine/dotfiles/_config/sway/config ~/.config/sway/
 	cp ~/Projects/motelnine/dotfiles/_config/waybar/config ~/.config/waybar/
 	cp ~/Projects/motelnine/dotfiles/_config/fuzzel/* ~/.config/fuzzel/
+	cp ~/Projects/motelnine/dotfiles/_config/nwg-drawer/* ~/.config/nwg-drawer/
+	cp ~/Projects/motelnine/dotfiles/_config/nwg-panel/* ~/.config/nwg-panel/
 
 	mkdir -p ~/Pictures
 	mkdir -p ~/Pictures/Wallpaper
