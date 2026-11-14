@@ -168,7 +168,7 @@ read SWAY
 if [ $SWAY == "y" ]
 then
 	sudo pacman -S sway grim slurp swaylock swaybg swayidle fuzzel nwg-menu nwg-drawer nwg-look nwg-display --noconfirm
-	yay -S xembedsniproxy --noconfirm
+	yay -S xembedsniproxy swaylock-effects --noconfirm
 
 	mkdir ~/.config/sway
 	mkdir ~/.config/waybar
